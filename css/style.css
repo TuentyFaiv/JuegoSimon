@@ -87,3 +87,37 @@ body{
 *{
     font-family: 'Arial';
 }
+
+@media screen and (max-width: 320px){
+    .gameboard{
+        width: 150px;
+        height: 150px;
+    }
+
+    .color{
+        width: 75px;
+        height: 75px;
+    }
+
+    .left.t{
+    border-top-left-radius: 75px; 
+    }
+
+    .right.t{
+        border-top-right-radius: 75px;
+    }
+
+    .left.b{
+        border-bottom-left-radius: 75px; 
+    }
+
+    .right.b{
+        border-bottom-right-radius: 75px;
+    }
+
+    .btn-start{
+        width: 175px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
