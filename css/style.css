@@ -1,353 +1,395 @@
+*{
+	font-family: 'Arial';
+}
+
 body{
-    height: 97vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
+	height: 100vh;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.header {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	top: 0;
+	right: 0;
+}
+
+.header h1{
+	margin: 20px 0;
+}
 
 .gameboard{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
+	width: 400px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
 }
 
 .color{
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
+}
+
+.color-active {
+	cursor: pointer;
 }
 
 .left.t{
-    border-top-left-radius: 200px; 
+	border-top-left-radius: 200px; 
 }
 
 .right.t{
-    border-top-right-radius: 200px;
+	border-top-right-radius: 200px;
 }
 
 .left.b{
-    border-bottom-left-radius: 200px; 
+	border-bottom-left-radius: 200px; 
 }
 
 .right.b{
-    border-bottom-right-radius: 200px;
+	border-bottom-right-radius: 200px;
 }
 
 .celeste{
-    background: #2990B9;
+	background: #0a9abe;
 }
 
 .violeta{
-    background: #9560BE;
+	background: #580f91;
 }
 
 .naranja{
-    background: #D77D1C;
+	background: #dd780c;
 }
 
 .verde{
-    background: #40B13C;
-}
-
-.btn-start{
-    width: 450px;
-    height: 100px;
-    position: absolute;
-    background: #C5CAC5;
-    border: none;
-    border-radius: 1px;
-    color: #4D504D;
-    box-shadow: 1px 2px #4D504D;
-    font-size: 40px;
-}
-
-.hide{
-    display: none;
+	background: #1ab415;
 }
 
 .celeste.light{
-    background: #55C3EE;
+	background: #23c4ec;
 }
 
 .violeta.light{
-    background: #B080D5;
+	background: #9229e2;
 }
 
 .naranja.light{
-    background: #F19B3D;
+	background: #ffa23f;
 }
 
 .verde.light{
-    background: rgb(89, 219, 84);
+	background: #36eb30;
 }
 
-*{
-    font-family: 'Arial';
+.modal {
+	display: flex;
+	position: absolute;
+	background: rgba(0, 0, 0, .5);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	align-items: center;
+	justify-content: center;
+}
+
+.settings {
+	position: relative;
+	width: calc(50% - 15px);
+	background: #F6F6F6;
+	border-radius: 8px;
+	padding: 20px 15px;
+}
+
+.settings label {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.settings h2,
+.settings input {
+	margin: 15px 0;
+}
+
+.settings h2{
+	min-width: 150px;
+	width: 150px;
+	font-size: 22px;
+}
+
+.settings input {
+	border: 1px solid black;
+	border-radius: 4px;
+	background: white;
+	padding: 5px 10px;
+}
+
+.btn {
+	margin: 0 20px;
+	padding: 0;
+	border: none;
+	outline: 0;
+	background: transparent;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn-settings {
+	display: flex;
+	align-items: center;
+}
+
+.btn-settings img {
+	width: 40px;
+	height: 40px;
+	margin-left: 15px;
+	object-fit: cover;
+}
+
+.btn-settings:hover img {
+	animation: rotation 2s infinite ease;
+}
+
+.btn-start{
+	position: absolute;
+	width: 450px;
+	height: 100px;
+	margin: 0;
+	background: #24CA75;
+	color: #FFFFFF;
+	border-radius: 5px;
+	box-shadow: 1px 2px 5px #4D504D;
+	font-size: 40px;
+}
+
+.btn-close {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	margin: 0;
+	top: 4px;
+	right: 5px;
+}
+
+.btn-close img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}
+
+.btn-success {
+	display: block;
+	width: 50%;
+	height: 35px;
+	margin: 15px auto;
+	padding: 5px 10px;
+	border-radius: 4px;
+	background: rgb(0, 155, 64);
+	color: #F1F1F1;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: .05em;
+}
+
+.hide{
+	display: none;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	100%{
+		transform: rotateZ(360deg);
+	}
 }
 
 @media screen and (max-width: 1024px){
-    body{
-        height: 97vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.gameboard{
+		width: 350px;
+		height: 350px;
+	}
 
-    .gameboard{
-        width: 350px;
-        height: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-    }
+	.color{
+		width: 175px;
+		height: 175px;
+	}
 
-    .color{
-        width: 175px;
-        height: 175px;
-    }
+	.left.t{
+		border-top-left-radius: 175px; 
+	}
 
-    .left.t{
-        border-top-left-radius: 175px; 
-    }
+	.right.t{
+		border-top-right-radius: 175px;
+	}
 
-    .right.t{
-        border-top-right-radius: 175px;
-    }
+	.left.b{
+		border-bottom-left-radius: 175px; 
+	}
 
-    .left.b{
-        border-bottom-left-radius: 175px; 
-    }
+	.right.b{
+		border-bottom-right-radius: 175px;
+	}
 
-    .right.b{
-        border-bottom-right-radius: 175px;
-    }
-
-    .btn-start{
-        width: 375px;
-        height: 90px;
-        position: absolute;
-        background: #C5CAC5;
-        border: none;
-        border-radius: 1px;
-        color: #4D504D;
-        box-shadow: 1px 2px #4D504D;
-        font-size: 38px;
-    }
+	.btn-start{
+		width: 375px;
+		height: 90px;
+		font-size: 38px;
+	}
 
 }
 
 @media screen and (max-width: 768px){
-    body{
-        height: 97vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.gameboard{
+		width: 300px;
+		height: 300px;
+	}
 
-    .gameboard{
-        width: 300px;
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-    }
+	.color{
+		width: 150px;
+		height: 150px;
+	}
 
-    .color{
-        width: 150px;
-        height: 150px;
-    }
+	.left.t{
+		border-top-left-radius: 150px; 
+	}
 
-    .left.t{
-        border-top-left-radius: 150px; 
-    }
+	.right.t{
+		border-top-right-radius: 150px;
+	}
 
-    .right.t{
-        border-top-right-radius: 150px;
-    }
+	.left.b{
+		border-bottom-left-radius: 150px; 
+	}
 
-    .left.b{
-        border-bottom-left-radius: 150px; 
-    }
+	.right.b{
+		border-bottom-right-radius: 150px;
+	}
 
-    .right.b{
-        border-bottom-right-radius: 150px;
-    }
-
-    .btn-start{
-        width: 350px;
-        height: 80px;
-        position: absolute;
-        background: #C5CAC5;
-        border: none;
-        border-radius: 1px;
-        color: #4D504D;
-        box-shadow: 1px 2px #4D504D;
-        font-size: 34px;
-    }
+	.btn-start{
+		width: 350px;
+		height: 80px;
+		font-size: 34px;
+	}
 
 }
 
 @media screen and (max-width: 425px){
-    body{
-        height: 97vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.gameboard{
+		width: 250px;
+		height: 250px;
+	}
 
-    .gameboard{
-        width: 250px;
-        height: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-    }
+	.color{
+		width: 125px;
+		height: 125px;
+	}
 
-    .color{
-        width: 125px;
-        height: 125px;
-    }
+	.left.t{
+		border-top-left-radius: 125px; 
+	}
 
-    .left.t{
-        border-top-left-radius: 125px; 
-    }
+	.right.t{
+		border-top-right-radius: 125px;
+	}
 
-    .right.t{
-        border-top-right-radius: 125px;
-    }
+	.left.b{
+		border-bottom-left-radius: 125px; 
+	}
 
-    .left.b{
-        border-bottom-left-radius: 125px; 
-    }
+	.right.b{
+		border-bottom-right-radius: 125px;
+	}
 
-    .right.b{
-        border-bottom-right-radius: 125px;
-    }
-
-    .btn-start{
-        width: 275px;
-        height: 70px;
-        position: absolute;
-        background: #C5CAC5;
-        border: none;
-        border-radius: 1px;
-        color: #4D504D;
-        box-shadow: 1px 2px #4D504D;
-        font-size: 26px;
-    }
+	.btn-start{
+		width: 275px;
+		height: 70px;
+		font-size: 26px;
+	}
 
 }
 
 @media screen and (max-width: 375px){
-    body{
-        height: 97vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.gameboard{
+		width: 200px;
+		height: 200px;
+	}
 
-    .gameboard{
-        width: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-    }
+	.color{
+		width: 100px;
+		height: 100px;
+	}
 
-    .color{
-        width: 100px;
-        height: 100px;
-    }
+	.left.t{
+		border-top-left-radius: 100px; 
+	}
 
-    .left.t{
-        border-top-left-radius: 100px; 
-    }
+	.right.t{
+		border-top-right-radius: 100px;
+	}
 
-    .right.t{
-        border-top-right-radius: 100px;
-    }
+	.left.b{
+		border-bottom-left-radius: 100px; 
+	}
 
-    .left.b{
-        border-bottom-left-radius: 100px; 
-    }
+	.right.b{
+		border-bottom-right-radius: 100px;
+	}
 
-    .right.b{
-        border-bottom-right-radius: 100px;
-    }
-
-    .btn-start{
-        width: 250px;
-        height: 60px;
-        position: absolute;
-        background: #C5CAC5;
-        border: none;
-        border-radius: 1px;
-        color: #4D504D;
-        box-shadow: 1px 2px #4D504D;
-        font-size: 22px;
-    }
-
+	.btn-start{
+		width: 250px;
+		height: 60px;
+		font-size: 22px;
+	}
 }
 
 @media screen and (max-width: 320px){
-    body{
-        height: 97vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	.gameboard{
+		width: 200px;
+		height: 200px;
+	}
 
-    .gameboard{
-        width: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        position: relative;
-    }
+	.color{
+		width: 100px;
+		height: 100px;
+	}
 
-    .color{
-        width: 100px;
-        height: 100px;
-    }
+	.left.t{
+		border-top-left-radius: 100px; 
+	}
 
-    .left.t{
-        border-top-left-radius: 100px; 
-    }
+	.right.t{
+		border-top-right-radius: 100px;
+	}
 
-    .right.t{
-        border-top-right-radius: 100px;
-    }
+	.left.b{
+		border-bottom-left-radius: 100px; 
+	}
 
-    .left.b{
-        border-bottom-left-radius: 100px; 
-    }
+	.right.b{
+		border-bottom-right-radius: 100px;
+	}
 
-    .right.b{
-        border-bottom-right-radius: 100px;
-    }
-
-    .btn-start{
-        width: 250px;
-        height: 60px;
-        position: absolute;
-        background: #C5CAC5;
-        border: none;
-        border-radius: 1px;
-        color: #4D504D;
-        box-shadow: 1px 2px #4D504D;
-        font-size: 22px;
-    }
+	.btn-start{
+		width: 250px;
+		height: 60px;
+		font-size: 22px;
+	}
 }

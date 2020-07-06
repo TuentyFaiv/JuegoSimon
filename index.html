@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="gameboard">
-            <div id="celeste" class="color celeste left t" data-color="celeste"></div>
-            <div id="violeta" class="color violeta right t" data-color="violeta"></div>
-            <div id="naranja" class="color naranja left b" data-color="naranja"></div>
-            <div id="verde" class="color verde right b" data-color="verde"></div>
-            <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a Jugar!</button>
-        </div>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="js/js.js"></script>
-    </body>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header class="header">
+		<button id="open" class="btn btn-settings">
+			<h1>Configuraciones del Juego</h1>
+			<img src="./assets/settings.svg" alt="Open Settings">
+		</button>
+	</header>
+	<main class="gameboard">
+		<div id="celeste" class="color celeste left t" data-color="celeste"></div>
+		<div id="violeta" class="color violeta right t" data-color="violeta"></div>
+		<div id="naranja" class="color naranja left b" data-color="naranja"></div>
+		<div id="verde" class="color verde right b" data-color="verde"></div>
+		<button id="btnEmpezar" class="btn btn-start" onclick="empezarJuego()">Empezar a Jugar!</button>
+	</main>
+	<div id="modal" class="modal hide">
+		<div class="settings">
+			<button id="close" class="btn btn-close">
+				<img src="./assets/close.png" alt="Close Modal">
+			</button>
+			<label for="level">
+				<h2>Niveles:</h2>
+				<input type="number" name="level" id="level" placeholder="0" value="5" />
+			</label>
+			<label for="speedOn">
+				<h2>Velocidad al encenderce:</h2>
+				<input type="number" name="speedOn" id="speedOn" placeholder="0" value="5" />
+			</label>
+			<label for="speedOff">
+				<h2>Velocidad al apagarse:</h2>
+				<input type="number" name="speedOff" id="speedOff" placeholder="0" value="5" />
+			</label>
+			<button id="changeSettings" class="btn btn-success">Aceptar</button>
+		</div>
+	</div>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/js.js"></script>
+</body>
+
 </html>
